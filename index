@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Agência DG | Marketing Digital</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    :root {
+      --amarelo:#FFD400;
+      --preto:#000000;
+      --branco:#FFFFFF;
+      --cinza:#f2f2f2;
+    }
+
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--branco);
+      color: var(--preto);
+    }
+
+    header {
+      background: var(--preto);
+      color: var(--branco);
+      padding:20px;
+      text-align:center;
+    }
+
+    header span {
+      color: var(--amarelo);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #000 65%, #111);
+      color:#fff;
+      padding:70px 20px;
+      text-align:center;
+    }
+
+    .hero h1 {
+      font-size:2.4rem;
+      margin-bottom:20px;
+    }
+
+    .hero h1 span {
+      color: var(--amarelo);
+    }
+
+    .hero p {
+      max-width:700px;
+      margin:0 auto 30px;
+      font-size:1.1rem;
+    }
+
+    .btn {
+      background: var(--amarelo);
+      color: var(--preto);
+      padding:15px 30px;
+      border-radius:8px;
+      font-weight:bold;
+      text-decoration:none;
+      display:inline-block;
+      transition:.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding:60px 20px;
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section h2 {
+      text-align:center;
+      margin-bottom:40px;
+      font-size:2rem;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .card {
+      background: var(--cinza);
+      padding:25px;
+      border-radius:10px;
+      text-align:center;
+      font-weight:bold;
+    }
+
+    .plans {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+
+    .plan {
+      border:2px solid var(--preto);
+      padding:30px;
+      border-radius:12px;
+      text-align:center;
+    }
+
+    .price {
+      font-size:2rem;
+      margin:20px 0;
+    }
+
+    footer {
+      background: var(--preto);
+      color: var(--branco);
+      text-align:center;
+      padding:20px;
+      font-size:.9rem;
+    }
+
+    footer a {
+      color: var(--amarelo);
+      text-decoration:none;
+      margin:0 8px;
+    }
+
+    @media(max-width:600px){
+      .hero h1 {
+        font-size:1.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h2>AGÊNCIA <span>DG</span></h2>
+</header>
+
+<section class="hero">
+  <h1>Impulsione seu <span>Instagram</span><br>com estratégia e autoridade</h1>
+  <p>
+    Soluções de marketing digital focadas em visibilidade, presença online e crescimento.
+  </p>
+  <a class="btn" href="https://wa.me/5599999999999">FALAR NO WHATSAPP</a>
+</section>
+
+<section class="section">
+  <h2>Por que escolher a Agência DG?</h2>
+  <div class="grid">
+    <div class="card">✔ Estratégia profissional</div>
+    <div class="card">✔ Processo seguro</div>
+    <div class="card">✔ Entrega rápida</div>
+    <div class="card">✔ Suporte humanizado</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Planos</h2>
+  <div class="plans">
+    <div class="plan">
+      <h3>Básico</h3>
+      <div class="price">R$ 29,90</div>
+      <p>Ideal para começar</p>
+      <a class="btn" href="#">Comprar</a>
+    </div>
+
+    <div class="plan">
+      <h3>Profissional</h3>
+      <div class="price">R$ 59,90</div>
+      <p>Mais alcance e autoridade</p>
+      <a class="btn" href="#">Comprar</a>
+    </div>
+
+    <div class="plan">
+      <h3>Premium</h3>
+      <div class="price">R$ 99,90</div>
+      <p>Crescimento contínuo</p>
+      <a class="btn" href="#">Comprar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2025 Agência DG  
+  <br><br>
+  <a href="politica.html">Política de Privacidade</a> |
+  <a href="termos.html">Termos de Uso</a>
+</footer>
+
+</body>
+</html>

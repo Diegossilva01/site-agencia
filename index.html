@@ -1,200 +1,238 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Agência DG | Marketing Digital</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Agência DG - Comprar Seguidores</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --amarelo:#FFD400;
-      --preto:#000000;
-      --branco:#FFFFFF;
-      --cinza:#f2f2f2;
-    }
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: #f2f2f2;
+}
 
-    * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+header {
+background: #ffffff;
+padding: 15px 30px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 
-    body {
-      background: var(--branco);
-      color: var(--preto);
-    }
+header h1 {
+color: #e53935;
+font-size: 20px;
+}
 
-    header {
-      background: var(--preto);
-      color: var(--branco);
-      padding:20px;
-      text-align:center;
-    }
+.hero {
+background: #e53935;
+color: #fff;
+padding: 60px 20px;
+text-align: center;
+}
 
-    header span {
-      color: var(--amarelo);
-    }
+.hero h2 {
+font-size: 36px;
+margin-bottom: 15px;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #000 65%, #111);
-      color:#fff;
-      padding:70px 20px;
-      text-align:center;
-    }
+.hero p {
+font-size: 18px;
+}
 
-    .hero h1 {
-      font-size:2.4rem;
-      margin-bottom:20px;
-    }
+.section {
+padding: 40px 20px;
+max-width: 1100px;
+margin: auto;
+}
 
-    .hero h1 span {
-      color: var(--amarelo);
-    }
+.section h3 {
+margin-bottom: 20px;
+}
 
-    .hero p {
-      max-width:700px;
-      margin:0 auto 30px;
-      font-size:1.1rem;
-    }
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 20px;
+}
 
-    .btn {
-      background: var(--amarelo);
-      color: var(--preto);
-      padding:15px 30px;
-      border-radius:8px;
-      font-weight:bold;
-      text-decoration:none;
-      display:inline-block;
-      transition:.3s;
-    }
+.card {
+background: #fff;
+border-radius: 8px;
+padding: 20px;
+text-align: center;
+}
 
-    .btn:hover {
-      transform: scale(1.05);
-    }
+.card h4 {
+font-size: 28px;
+color: #e53935;
+}
 
-    .section {
-      padding:60px 20px;
-      max-width:1100px;
-      margin:auto;
-    }
+.card p {
+margin: 10px 0;
+}
 
-    .section h2 {
-      text-align:center;
-      margin-bottom:40px;
-      font-size:2rem;
-    }
+.card button {
+background: #e53935;
+color: #fff;
+border: none;
+padding: 12px;
+width: 100%;
+border-radius: 6px;
+cursor: pointer;
+}
 
-    .grid {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-    }
+.card button:hover {
+background: #c62828;
+}
 
-    .card {
-      background: var(--cinza);
-      padding:25px;
-      border-radius:10px;
-      text-align:center;
-      font-weight:bold;
-    }
+/* MODAL */
+.modal {
+display: none;
+position: fixed;
+inset: 0;
+background: rgba(0,0,0,0.6);
+justify-content: center;
+align-items: center;
+}
 
-    .plans {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:25px;
-    }
+.modal-content {
+background: #fff;
+padding: 25px;
+width: 95%;
+max-width: 420px;
+border-radius: 8px;
+}
 
-    .plan {
-      border:2px solid var(--preto);
-      padding:30px;
-      border-radius:12px;
-      text-align:center;
-    }
+.modal-content h3 {
+margin-top: 0;
+}
 
-    .price {
-      font-size:2rem;
-      margin:20px 0;
-    }
+.modal-content input {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+}
 
-    footer {
-      background: var(--preto);
-      color: var(--branco);
-      text-align:center;
-      padding:20px;
-      font-size:.9rem;
-    }
+.modal-content button {
+width: 100%;
+padding: 12px;
+background: #e53935;
+color: #fff;
+border: none;
+border-radius: 6px;
+}
 
-    footer a {
-      color: var(--amarelo);
-      text-decoration:none;
-      margin:0 8px;
-    }
+.pix {
+text-align: center;
+}
 
-    @media(max-width:600px){
-      .hero h1 {
-        font-size:1.9rem;
-      }
-    }
-  </style>
+.pix strong {
+display: block;
+margin: 10px 0;
+}
+
+.close {
+text-align: right;
+cursor: pointer;
+color: red;
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h2>AGÊNCIA <span>DG</span></h2>
+<h1>Agência DG</h1>
 </header>
 
 <section class="hero">
-  <h1>Impulsione seu <span>Instagram</span><br>com estratégia e autoridade</h1>
-  <p>
-    Soluções de marketing digital focadas em visibilidade, presença online e crescimento.
-  </p>
-  <a class="btn" href="https://wa.me/5599999999999">FALAR NO WHATSAPP</a>
+<h2>Comprar Seguidores no Instagram</h2>
+<p>Seguidores Mundiais e Brasileiros • Pagamento via PIX</p>
 </section>
 
 <section class="section">
-  <h2>Por que escolher a Agência DG?</h2>
-  <div class="grid">
-    <div class="card">✔ Estratégia profissional</div>
-    <div class="card">✔ Processo seguro</div>
-    <div class="card">✔ Entrega rápida</div>
-    <div class="card">✔ Suporte humanizado</div>
-  </div>
+<h3>Seguidores Mundiais</h3>
+<div class="grid">
+<div class="card"><h4>100</h4><p>R$ 10,00</p><button onclick="comprar('100 Seguidores Mundiais','10,00')">Comprar Agora</button></div>
+<div class="card"><h4>500</h4><p>R$ 25,00</p><button onclick="comprar('500 Seguidores Mundiais','25,00')">Comprar Agora</button></div>
+<div class="card"><h4>1.000</h4><p>R$ 47,00</p><button onclick="comprar('1.000 Seguidores Mundiais','47,00')">Comprar Agora</button></div>
+<div class="card"><h4>2.500</h4><p>R$ 110,00</p><button onclick="comprar('2.500 Seguidores Mundiais','110,00')">Comprar Agora</button></div>
+</div>
 </section>
 
 <section class="section">
-  <h2>Planos</h2>
-  <div class="plans">
-    <div class="plan">
-      <h3>Básico</h3>
-      <div class="price">R$ 29,90</div>
-      <p>Ideal para começar</p>
-      <a class="btn" href="#">Comprar</a>
-    </div>
-
-    <div class="plan">
-      <h3>Profissional</h3>
-      <div class="price">R$ 59,90</div>
-      <p>Mais alcance e autoridade</p>
-      <a class="btn" href="#">Comprar</a>
-    </div>
-
-    <div class="plan">
-      <h3>Premium</h3>
-      <div class="price">R$ 99,90</div>
-      <p>Crescimento contínuo</p>
-      <a class="btn" href="#">Comprar</a>
-    </div>
-  </div>
+<h3>Seguidores Brasileiros</h3>
+<div class="grid">
+<div class="card"><h4>250</h4><p>R$ 30,00</p><button onclick="comprar('250 Seguidores Brasileiros','30,00')">Comprar Agora</button></div>
+<div class="card"><h4>500</h4><p>R$ 45,00</p><button onclick="comprar('500 Seguidores Brasileiros','45,00')">Comprar Agora</button></div>
+<div class="card"><h4>1.000</h4><p>R$ 85,00</p><button onclick="comprar('1.000 Seguidores Brasileiros','85,00')">Comprar Agora</button></div>
+<div class="card"><h4>1.500</h4><p>R$ 127,00</p><button onclick="comprar('1.500 Seguidores Brasileiros','127,00')">Comprar Agora</button></div>
+</div>
 </section>
 
-<footer>
-  © 2025 Agência DG  
-  <br><br>
-  <a href="politica.html">Política de Privacidade</a> |
-  <a href="termos.html">Termos de Uso</a>
-</footer>
+<!-- MODAL -->
+<div class="modal" id="modal">
+<div class="modal-content">
+<div class="close" onclick="fechar()">X</div>
+<h3 id="produto"></h3>
+<p>Valor: R$ <span id="valor"></span></p>
+
+<input id="nome" placeholder="Nome completo">
+<input id="whats" placeholder="WhatsApp">
+<input id="email" placeholder="Email">
+<input id="link" placeholder="Link do Instagram">
+
+<button onclick="pagar()">Ir para pagamento</button>
+</div>
+</div>
+
+<div class="modal" id="pix">
+<div class="modal-content pix">
+<div class="close" onclick="fechar()">X</div>
+<h3>Pagamento via PIX</h3>
+<p>Chave PIX:</p>
+<strong>dbaf300d-377c-478c-aad4-9d6340ba216c</strong>
+<p>Nome: Diego Santos</p>
+<p>Após o pagamento, envie o comprovante.</p>
+<button onclick="whatsapp()">Enviar comprovante</button>
+</div>
+</div>
+
+<script>
+let produtoSelecionado = '';
+let valorSelecionado = '';
+
+function comprar(produto, valor) {
+produtoSelecionado = produto;
+valorSelecionado = valor;
+document.getElementById('produto').innerText = produto;
+document.getElementById('valor').innerText = valor;
+document.getElementById('modal').style.display = 'flex';
+}
+
+function fechar() {
+document.getElementById('modal').style.display = 'none';
+document.getElementById('pix').style.display = 'none';
+}
+
+function pagar() {
+document.getElementById('modal').style.display = 'none';
+document.getElementById('pix').style.display = 'flex';
+}
+
+function whatsapp() {
+const nome = document.getElementById('nome').value;
+const whats = document.getElementById('whats').value;
+const email = document.getElementById('email').value;
+const link = document.getElementById('link').value;
+
+const msg = `Olá, fiz o pagamento via PIX.%0A%0ANome: ${nome}%0AWhatsApp: ${whats}%0AEmail: ${email}%0AProduto: ${produtoSelecionado}%0AValor: R$ ${valorSelecionado}%0ALink: ${link}%0A%0ASegue o comprovante.`;
+
+window.open(`https://wa.me/5511977030517?text=${msg}`);
+}
+</script>
 
 </body>
 </html>

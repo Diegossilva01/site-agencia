@@ -6,68 +6,104 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+:root{
+--preto:#0f172a;
+--amarelo:#FFD600;
+--vermelho:#e53935;
+--cinza:#f4f4f4;
+}
+
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
-background:#f2f2f2;
+background:#fff;
+color:#111;
 }
+
 header{
-background:#000;
-color:#FFD600;
-padding:15px;
+background:#fff;
+padding:15px 30px;
+border-bottom:1px solid #eee;
 text-align:center;
 font-size:22px;
 font-weight:bold;
 }
+
 .hero{
-background:#FFD600;
-color:#000;
-padding:40px 20px;
+background:linear-gradient(180deg,#ff3b30,#e53935);
+color:#fff;
+padding:70px 20px;
 text-align:center;
 }
-.hero h1{margin:0;font-size:32px;}
-.hero p{margin-top:10px;font-size:18px;}
+
+.hero h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:18px;
+opacity:.95;
+}
+
 .section{
-max-width:1100px;
+padding:60px 20px;
+max-width:1200px;
 margin:auto;
-padding:40px 20px;
 }
-.section h2{
+
+.section-title{
 text-align:center;
-margin-bottom:25px;
+font-size:30px;
+margin-bottom:40px;
 }
+
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px;
 }
+
 .card{
-background:#fff;
-border-radius:8px;
-padding:20px;
+background:#f9fafb;
+border-radius:14px;
+padding:30px 20px;
 text-align:center;
-box-shadow:0 0 10px rgba(0,0,0,.1);
+box-shadow:0 15px 30px rgba(0,0,0,.08);
 }
-.card h3{
-font-size:26px;
-margin:10px 0;
+
+.card .qtd{
+font-size:42px;
+font-weight:bold;
+color:var(--vermelho);
 }
-.card p{
-font-size:18px;
-margin:10px 0;
+
+.card .tipo{
+margin-top:5px;
+font-size:16px;
+color:#555;
 }
+
+.card .preco{
+margin:15px 0;
+font-size:28px;
+font-weight:bold;
+color:var(--vermelho);
+}
+
 .card button{
 width:100%;
-padding:12px;
-background:#000;
-color:#FFD600;
+padding:14px;
+background:var(--vermelho);
+color:#fff;
 border:none;
-border-radius:6px;
+border-radius:30px;
 font-size:16px;
 cursor:pointer;
 }
+
 .card button:hover{
-background:#222;
+opacity:.9;
 }
 
 /* MODAL */
@@ -80,49 +116,90 @@ justify-content:center;
 align-items:center;
 z-index:999;
 }
+
 .modal-content{
 background:#fff;
 padding:25px;
 width:95%;
 max-width:420px;
-border-radius:8px;
+border-radius:12px;
 }
+
 .close{
 text-align:right;
 font-weight:bold;
 cursor:pointer;
-color:red;
+color:#e53935;
 }
-.modal-content input{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-}
-.modal-content button{
+
+input{
 width:100%;
 padding:12px;
+margin-bottom:12px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+.modal-content button{
+width:100%;
+padding:14px;
 background:#000;
 color:#FFD600;
 border:none;
-border-radius:6px;
-margin-top:10px;
+border-radius:8px;
+font-size:16px;
 cursor:pointer;
 }
+
 .pix{
 text-align:center;
 }
+
 .pix img{
 width:220px;
-margin:10px auto;
+margin:15px auto;
 display:block;
 }
-.pix input{
-width:100%;
-padding:10px;
-margin-top:10px;
-}
+
 small{
 font-size:12px;
+color:#555;
+}
+
+/* AVALIAÇÕES */
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px;
+}
+
+.review{
+background:#f9fafb;
+padding:20px;
+border-radius:12px;
+}
+
+.review strong{
+display:block;
+margin-bottom:5px;
+}
+
+/* FAQ */
+.faq-item{
+background:#f9fafb;
+margin-bottom:10px;
+border-radius:8px;
+}
+
+.faq-item summary{
+padding:15px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.faq-item p{
+padding:0 15px 15px;
+color:#444;
 }
 </style>
 </head>
@@ -132,130 +209,84 @@ font-size:12px;
 <header>AGÊNCIA DG</header>
 
 <section class="hero">
-<h1>Comprar Seguidores Instagram</h1>
-<p>Seguidores Mundiais e Brasileiros • Pagamento via PIX</p>
+<h1>Comprar Seguidores no Instagram</h1>
+<p>Cresça rápido com segurança • Pagamento via PIX</p>
 </section>
 
 <section class="section">
-<h2>Seguidores Mundiais</h2>
+<h2 class="section-title">Seguidores Mundiais</h2>
+
 <div class="grid">
-<div class="card"><h3>100</h3><p>R$ 10,00</p><button onclick="comprar('100 Seguidores Mundiais','10.00')">Comprar Agora</button></div>
-<div class="card"><h3>500</h3><p>R$ 25,00</p><button onclick="comprar('500 Seguidores Mundiais','25.00')">Comprar Agora</button></div>
-<div class="card"><h3>1.000</h3><p>R$ 47,00</p><button onclick="comprar('1.000 Seguidores Mundiais','47.00')">Comprar Agora</button></div>
-<div class="card"><h3>2.500</h3><p>R$ 110,00</p><button onclick="comprar('2.500 Seguidores Mundiais','110.00')">Comprar Agora</button></div>
+<div class="card">
+<div class="qtd">100</div>
+<div class="tipo">Seguidores Mundiais</div>
+<div class="preco">R$ 10.00</div>
+<button onclick="comprar('100 Seguidores Mundiais','10')">Comprar Agora</button>
+</div>
+
+<div class="card">
+<div class="qtd">500</div>
+<div class="tipo">Seguidores Mundiais</div>
+<div class="preco">R$ 25.00</div>
+<button onclick="comprar('500 Seguidores Mundiais','25')">Comprar Agora</button>
+</div>
+
+<div class="card">
+<div class="qtd">1.000</div>
+<div class="tipo">Seguidores Mundiais</div>
+<div class="preco">R$ 47.00</div>
+<button onclick="comprar('1.000 Seguidores Mundiais','47')">Comprar Agora</button>
+</div>
+
+<div class="card">
+<div class="qtd">2.500</div>
+<div class="tipo">Seguidores Mundiais</div>
+<div class="preco">R$ 110.00</div>
+<button onclick="comprar('2.500 Seguidores Mundiais','110')">Comprar Agora</button>
+</div>
 </div>
 </section>
 
 <section class="section">
-<h2>Seguidores Brasileiros</h2>
-<div class="grid">
-<div class="card"><h3>250</h3><p>R$ 30,00</p><button onclick="comprar('250 Seguidores Brasileiros','30.00')">Comprar Agora</button></div>
-<div class="card"><h3>500</h3><p>R$ 45,00</p><button onclick="comprar('500 Seguidores Brasileiros','45.00')">Comprar Agora</button></div>
-<div class="card"><h3>1.000</h3><p>R$ 85,00</p><button onclick="comprar('1.000 Seguidores Brasileiros','85.00')">Comprar Agora</button></div>
-<div class="card"><h3>1.500</h3><p>R$ 127,00</p><button onclick="comprar('1.500 Seguidores Brasileiros','127.00')">Comprar Agora</button></div>
+<h2 class="section-title">O que nossos clientes dizem</h2>
+
+<div class="reviews">
+<div class="review"><strong>Raquel Moraes</strong>⭐⭐⭐⭐⭐<br>Resultados incríveis! Atendimento nota 10.</div>
+<div class="review"><strong>Eduardo Moreira</strong>⭐⭐⭐⭐⭐<br>Recebi tudo rápido e com qualidade.</div>
+<div class="review"><strong>Marcelo Moreira</strong>⭐⭐⭐⭐⭐<br>Serviço confiável, recomendo!</div>
 </div>
 </section>
 
-<!-- MODAL FORM -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<div class="close" onclick="fechar()">X</div>
-<h3 id="produto"></h3>
-<p>Valor: R$ <span id="valor"></span></p>
-<input id="nome" placeholder="Nome completo">
-<input id="whats" placeholder="WhatsApp">
-<input id="email" placeholder="E-mail">
-<input id="link" placeholder="Link do Instagram">
-<button onclick="pagar()">Ir para pagamento</button>
-</div>
-</div>
+<section class="section">
+<h2 class="section-title">Perguntas Frequentes</h2>
 
-<!-- MODAL PIX -->
-<div class="modal" id="pix">
-<div class="modal-content pix">
-<div class="close" onclick="fechar()">X</div>
-<h3>Pagamento via PIX</h3>
-<p><strong id="pixProduto"></strong></p>
-<p>Valor: <strong>R$ <span id="pixValor"></span></strong></p>
+<details class="faq-item">
+<summary>Preciso fornecer minha senha?</summary>
+<p>Não. Nunca pedimos senha.</p>
+</details>
 
-<img id="qrcode">
-<input id="pixCopia" readonly>
+<details class="faq-item">
+<summary>Em quanto tempo recebo os seguidores?</summary>
+<p>Normalmente em até 24 horas.</p>
+</details>
 
-<button onclick="copiarPix()">Copiar PIX</button>
-<button onclick="whatsapp()">Enviar comprovante</button>
-
-<small>Após o pagamento, envie o comprovante para finalizar.</small>
-</div>
-</div>
+<details class="faq-item">
+<summary>É seguro comprar seguidores?</summary>
+<p>Sim, utilizamos métodos seguros.</p>
+</details>
+</section>
 
 <script>
 let produtoSelecionado="",valorSelecionado="";
-const chavePix="dbaf300d-377c-478c-aad4-9d6340ba216c";
-const nomePix="Diego Santos";
-const cidadePix="SAO PAULO";
+const pix={
+"10":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540510.005802BR5918Diego Santos Silva6009SAO PAULO62140510tizNNZGbQS6304E56C",
+"25":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540525.005802BR5918Diego Santos Silva6009SAO PAULO62140510OfBPzHSlro6304B4EB",
+"47":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540547.005802BR5918Diego Santos Silva6009SAO PAULO62140510DSvl4axZ5x6304F947",
+"110":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c5204000053039865406110.005802BR5918Diego Santos Silva6009SAO PAULO62140510gFw2OMch7Z63040C75"
+};
 
 function comprar(p,v){
-produtoSelecionado=p;
-valorSelecionado=v;
-document.getElementById("produto").innerText=p;
-document.getElementById("valor").innerText=v;
-document.getElementById("modal").style.display="flex";
-}
-function fechar(){
-document.getElementById("modal").style.display="none";
-document.getElementById("pix").style.display="none";
-}
-function pagar(){
-document.getElementById("modal").style.display="none";
-document.getElementById("pix").style.display="flex";
-
-document.getElementById("pixProduto").innerText=produtoSelecionado;
-document.getElementById("pixValor").innerText=valorSelecionado;
-
-const payload=gerarPix(chavePix,nomePix,cidadePix,valorSelecionado);
-document.getElementById("pixCopia").value=payload;
-document.getElementById("qrcode").src=
-"https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(payload);
-}
-function copiarPix(){
-const i=document.getElementById("pixCopia");
-i.select();document.execCommand("copy");
-alert("PIX copiado!");
-}
-function whatsapp(){
-const msg=`Olá, fiz o pagamento via PIX.
-
-Nome: ${nome.value}
-WhatsApp: ${whats.value}
-Email: ${email.value}
-Produto: ${produtoSelecionado}
-Valor: R$ ${valorSelecionado}
-Link: ${link.value}
-
-Segue o comprovante.`;
-window.open("https://wa.me/5511977030517?text="+encodeURIComponent(msg));
-}
-
-/* GERADOR PIX */
-function gerarPix(chave,nome,cidade,valor){
-function campo(id,v){return id+v.length.toString().padStart(2,"0")+v}
-let p=
-campo("00","01")+
-campo("26",campo("00","BR.GOV.BCB.PIX")+campo("01",chave))+
-campo("52","0000")+campo("53","986")+
-campo("54",parseFloat(valor).toFixed(2))+
-campo("58","BR")+campo("59",nome.substring(0,25))+
-campo("60",cidade.substring(0,15))+
-campo("62",campo("05","***"));
-p+="6304"+crc16(p);return p;
-}
-function crc16(str){
-let crc=0xFFFF;
-for(let c of str){
-crc^=c.charCodeAt(0)<<8;
-for(let i=0;i<8;i++)crc=(crc&0x8000)?(crc<<1)^0x1021:crc<<1;
-}
-return (crc&0xFFFF).toString(16).toUpperCase().padStart(4,"0");
+alert(`Produto: ${p}\nValor: R$ ${v}.00\n\nPIX Copia e Cola:\n\n${pix[v]}`);
 }
 </script>
 

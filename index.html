@@ -10,44 +10,45 @@
 --preto:#000;
 --amarelo:#FFD600;
 --branco:#fff;
---cinza:#f4f4f4;
+--cinza:#f2f2f2;
 }
 
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
-background:var(--branco);
-color:var(--preto);
+background:#fff;
+color:#000;
 }
 
+/* HEADER */
 header{
 padding:15px;
 text-align:center;
-font-weight:bold;
 font-size:22px;
+font-weight:bold;
 border-bottom:1px solid #eee;
 }
 
 /* HERO */
 .hero{
-background:var(--preto);
-color:var(--branco);
-padding:50px 20px;
+background:linear-gradient(180deg,var(--amarelo),#fff);
+padding:60px 20px;
 text-align:center;
 }
-
 .hero h1{
-color:var(--amarelo);
+font-size:38px;
 margin-bottom:10px;
 }
+.hero p{
+font-size:16px;
+}
 
-/* SEÇÕES */
+/* SECTIONS */
 .section{
-padding:40px 20px;
+padding:50px 20px;
 max-width:1100px;
 margin:auto;
 }
-
 .section h2{
 text-align:center;
 margin-bottom:30px;
@@ -57,212 +58,243 @@ margin-bottom:30px;
 .cards{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
+gap:24px;
 }
-
 .card{
-background:var(--cinza);
-padding:25px;
-border-radius:12px;
+background:#e9f0ef;
+border-radius:16px;
+padding:30px 20px;
 text-align:center;
 }
-
 .card h3{
-font-size:36px;
+font-size:42px;
 margin:0;
 }
-
-.card p{
-margin:10px 0;
+.card span{
+display:block;
+margin-top:6px;
 }
-
+.card .price{
+font-weight:bold;
+margin:12px 0;
+}
 .card button{
 background:var(--amarelo);
 border:none;
-padding:12px 20px;
+padding:10px 18px;
+border-radius:8px;
 font-weight:bold;
 cursor:pointer;
-border-radius:8px;
 }
 
 /* MODAL */
 .modal{
-display:none;
 position:fixed;
 inset:0;
 background:rgba(0,0,0,.6);
-justify-content:center;
+display:none;
 align-items:center;
+justify-content:center;
+z-index:10;
 }
-
 .modal-content{
 background:#fff;
 padding:25px;
-width:100%;
-max-width:420px;
-border-radius:12px;
+width:360px;
+border-radius:10px;
 }
-
 .modal-content h3{
-margin-top:0;
+text-align:center;
 }
-
-.modal-content input{
+.modal-content input,
+.modal-content textarea{
 width:100%;
 padding:10px;
-margin-bottom:10px;
+margin:6px 0;
 }
-
 .modal-content button{
 width:100%;
+padding:10px;
+margin-top:10px;
 background:var(--amarelo);
 border:none;
-padding:12px;
 font-weight:bold;
+cursor:pointer;
+}
+.modal-content button:disabled{
+opacity:.5;
+cursor:not-allowed;
+}
+.close{
+background:#000;
+color:#fff;
 }
 
-.pix-box{
-background:#f9f9f9;
-padding:15px;
-margin-top:15px;
-word-break:break-all;
+/* LOADING */
+.loading{
 display:none;
+text-align:center;
+}
+.spinner{
+width:30px;
+height:30px;
+border:4px solid #ddd;
+border-top:4px solid var(--amarelo);
+border-radius:50%;
+animation:spin 1s linear infinite;
+margin:10px auto;
+}
+@keyframes spin{
+100%{transform:rotate(360deg);}
 }
 
-/* AVALIAÇÕES */
-.reviews{
+/* DEPOIMENTOS */
+.testimonials{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 }
-
-.review{
-background:#f4f4f4;
-padding:20px;
+.testimonial{
+background:var(--cinza);
+padding:15px;
 border-radius:10px;
 }
 
 /* FAQ */
-.faq details{
-margin-bottom:10px;
+.faq-item{
+background:var(--cinza);
+margin:10px 0;
+padding:15px;
+border-radius:8px;
+cursor:pointer;
+}
+.faq-item p{
+display:none;
+margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 
-<header>AGÊNCIA DG</header>
+<header>Agência DG</header>
 
 <section class="hero">
 <h1>Comprar Seguidores no Instagram</h1>
 <p>Seguro • Rápido • Sem senha</p>
 </section>
 
-<!-- SEGUIDORES MUNDIAIS -->
 <section class="section">
 <h2>Seguidores Mundiais</h2>
 <div class="cards">
-<div class="card">
-<h3>100</h3>
-<p>R$ 10,00</p>
-<button onclick="abrirPagamento('10')">Comprar Agora</button>
-</div>
-<div class="card">
-<h3>500</h3>
-<p>R$ 25,00</p>
-<button onclick="abrirPagamento('25')">Comprar Agora</button>
-</div>
-<div class="card">
-<h3>1.000</h3>
-<p>R$ 47,00</p>
-<button onclick="abrirPagamento('47')">Comprar Agora</button>
-</div>
-<div class="card">
-<h3>2.500</h3>
-<p>R$ 110,00</p>
-<button onclick="abrirPagamento('110')">Comprar Agora</button>
-</div>
+<div class="card"><h3>100</h3><span>Seguidores Mundiais</span><div class="price">R$ 10,00</div><button onclick="abrirPagamento('10')">Comprar Agora</button></div>
+<div class="card"><h3>500</h3><span>Seguidores Mundiais</span><div class="price">R$ 25,00</div><button onclick="abrirPagamento('25')">Comprar Agora</button></div>
+<div class="card"><h3>1.000</h3><span>Seguidores Mundiais</span><div class="price">R$ 47,00</div><button onclick="abrirPagamento('47')">Comprar Agora</button></div>
+<div class="card"><h3>2.500</h3><span>Seguidores Mundiais</span><div class="price">R$ 110,00</div><button onclick="abrirPagamento('110')">Comprar Agora</button></div>
 </div>
 </section>
 
-<!-- SEGUIDORES BRASILEIROS -->
 <section class="section">
 <h2>Seguidores Brasileiros</h2>
 <div class="cards">
-<div class="card">
-<h3>250</h3>
-<p>R$ 30,00</p>
-<button onclick="abrirPagamento('30')">Comprar Agora</button>
-</div>
-<div class="card">
-<h3>500</h3>
-<p>R$ 45,00</p>
-<button onclick="abrirPagamento('45')">Comprar Agora</button>
-</div>
+<div class="card"><h3>250</h3><span>Seguidores Brasileiros</span><div class="price">R$ 30,00</div><button onclick="abrirPagamento('30')">Comprar Agora</button></div>
+<div class="card"><h3>500</h3><span>Seguidores Brasileiros</span><div class="price">R$ 45,00</div><button onclick="abrirPagamento('45')">Comprar Agora</button></div>
+<div class="card"><h3>1.000</h3><span>Seguidores Brasileiros</span><div class="price">R$ 85,00</div><button onclick="abrirPagamento('85')">Comprar Agora</button></div>
+<div class="card"><h3>1.500</h3><span>Seguidores Brasileiros</span><div class="price">R$ 127,00</div><button onclick="abrirPagamento('127')">Comprar Agora</button></div>
 </div>
 </section>
 
-<!-- MODAL PAGAMENTO -->
-<div class="modal" id="modal">
-<div class="modal-content">
-<h3>Finalizar Pedido</h3>
-
-<input placeholder="Nome completo">
-<input placeholder="WhatsApp">
-<input placeholder="Email">
-<input placeholder="Link do Instagram">
-
-<button onclick="mostrarPix()">Mostrar PIX</button>
-
-<div class="pix-box" id="pixBox">
-<strong>Pagamento via PIX</strong>
-<p id="pixCode"></p>
-</div>
-
-<button onclick="fechar()">Fechar</button>
-</div>
-</div>
-
-<!-- AVALIAÇÕES -->
 <section class="section">
 <h2>O que nossos clientes dizem</h2>
-<div class="reviews">
-<div class="review">⭐⭐⭐⭐⭐<br>“Entrega rápida e segura.”</div>
-<div class="review">⭐⭐⭐⭐⭐<br>“Meu Instagram cresceu muito.”</div>
-<div class="review">⭐⭐⭐⭐⭐<br>“Recomendo demais!”</div>
+<div class="testimonials">
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>Serviço rápido e confiável.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>Entrega certinha, recomendo.</div>
+<div class="testimonial">⭐️⭐️⭐️⭐️⭐️<br>Atendimento excelente.</div>
 </div>
 </section>
 
-<!-- FAQ -->
-<section class="section faq">
+<section class="section">
 <h2>Perguntas Frequentes</h2>
-<details><summary>Preciso informar minha senha?</summary><p>Não.</p></details>
-<details><summary>É seguro?</summary><p>Sim.</p></details>
-<details><summary>Quanto tempo demora?</summary><p>Início em poucas horas.</p></details>
+<div class="faq-item" onclick="toggleFaq(this)">Os seguidores são reais?<p>Sim, perfis reais e ativos.</p></div>
+<div class="faq-item" onclick="toggleFaq(this)">Preciso informar senha?<p>Não. Nunca pedimos senha.</p></div>
+<div class="faq-item" onclick="toggleFaq(this)">Em quanto tempo recebo?<p>Normalmente em poucas horas.</p></div>
 </section>
 
-<script>
-let valorSelecionado = '';
+<!-- MODAL -->
+<div id="modal" class="modal">
+<div class="modal-content">
+<h3>Finalizar Pedido</h3>
+<input id="nome" placeholder="Nome completo">
+<input id="whats" placeholder="WhatsApp">
+<input id="email" placeholder="Email">
+<input id="insta" placeholder="Link do Instagram">
 
-const pixCodes = {
-'10':'00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c540510.00',
-'25':'00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c540525.00',
-'47':'00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c540547.00',
-'110':'00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c5406110.00'
+<button id="btnPix" disabled onclick="mostrarPix()">Mostrar pagamento</button>
+
+<div id="loading" class="loading">
+<div class="spinner"></div>
+<p>Gerando pagamento...</p>
+</div>
+
+<div id="pixArea" style="display:none">
+<p><strong>Valor:</strong> <span id="valorPix"></span></p>
+<textarea id="codigoPix" readonly></textarea>
+<button onclick="enviarWhats()">Enviar comprovante no WhatsApp</button>
+</div>
+
+<button class="close" onclick="fecharModal()">Fechar</button>
+</div>
+</div>
+
+<script>
+let valorSelecionado="";
+let pixCodes={
+"10":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540510.005802BR5918Diego Santos Silva6009SAO PAULO62140510tizNNZGbQS6304E56C",
+"25":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540525.005802BR5918Diego Santos Silva6009SAO PAULO62140510OfBPzHSlro6304B4EB",
+"47":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c520400005303986540547.005802BR5918Diego Santos Silva6009SAO PAULO62140510DSvl4axZ5x6304F947",
+"110":"00020126580014BR.GOV.BCB.PIX0136dbaf300d-377c-478c-aad4-9d6340ba216c5204000053039865406110.005802BR5918Diego Santos Silva6009SAO PAULO62140510gFw2OMch7Z63040C75"
 };
 
-function abrirPagamento(valor){
-valorSelecionado = valor;
-document.getElementById('modal').style.display='flex';
+function abrirPagamento(v){
+valorSelecionado=v;
+document.getElementById("modal").style.display="flex";
+}
+
+function fecharModal(){
+document.getElementById("modal").style.display="none";
+document.getElementById("pixArea").style.display="none";
+}
+
+["nome","whats","email","insta"].forEach(id=>{
+document.getElementById(id).addEventListener("input",validar);
+});
+
+function validar(){
+let ok=true;
+["nome","whats","email","insta"].forEach(id=>{
+if(document.getElementById(id).value.trim()==="") ok=false;
+});
+document.getElementById("btnPix").disabled=!ok;
 }
 
 function mostrarPix(){
-document.getElementById('pixCode').innerText = pixCodes[valorSelecionado];
-document.getElementById('pixBox').style.display='block';
+document.getElementById("loading").style.display="block";
+setTimeout(()=>{
+document.getElementById("loading").style.display="none";
+document.getElementById("pixArea").style.display="block";
+document.getElementById("valorPix").innerText="R$ "+valorSelecionado+",00";
+document.getElementById("codigoPix").value=pixCodes[valorSelecionado];
+},1200);
 }
 
-function fechar(){
-document.getElementById('modal').style.display='none';
+function enviarWhats(){
+let msg=`NOVO PEDIDO%0ANome: ${nome.value}%0AWhats: ${whats.value}%0AEmail: ${email.value}%0AInstagram: ${insta.value}%0AValor: R$ ${valorSelecionado},00`;
+window.open("https://wa.me/5511977030517?text="+msg,"_blank");
+}
+
+function toggleFaq(el){
+let p=el.querySelector("p");
+p.style.display=p.style.display==="block"?"none":"block";
 }
 </script>
 
